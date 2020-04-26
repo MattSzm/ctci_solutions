@@ -33,5 +33,6 @@ class tests(unittest.TestCase):
          output = delete_middle_node(self.F)
          self.assertFalse(output)
 
+
 if '__main__' == __name__:
     unittest.main()
