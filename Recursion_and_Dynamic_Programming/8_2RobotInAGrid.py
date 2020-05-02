@@ -1,16 +1,23 @@
-def Robot(Grid, row, column, movedRight):
-    Grid[row][column] = 1
+class point:
+    def __init__(self,i,j):
+        self.i = i
+        self.j = j
+
+def Robot(Grid, row, column, movedRight, output=None):
+    if row == 0  and column == 0:
+        output = []
+    output.append(point(row,column))
     if row == len(Grid) - 1 and column == len(Grid[0]) - 1:
-        return Grid
+        return output
 
     if len(Grid)-1 == row or not Grid[row+1][column]:
-        return Robot(Grid, row, column+1, True)
+        return Robot(Grid, row, column+1, True, output)
     elif len(Grid[0])-1 == column or not Grid[row][column+1]:
-        return Robot(Grid, row+1, column, False)
+        return Robot(Grid, row+1, column, False, output)
     elif movedRight:
-        return Robot(Grid, row+1, column, False)
+        return Robot(Grid, row+1, column, False, output)
     else:
-        return Robot(Grid, row, column+1, True)
+        return Robot(Grid, row, column+1, True, output)
 if __name__ == '__main__':
     rows = 6
     column = 8
@@ -27,4 +34,4 @@ if __name__ == '__main__':
     output = Robot(inputGrid, 0, 0, False)
 
     for i in output:
-        print(i)
+        print(str(i.i) + '\t' + str(i.j))
