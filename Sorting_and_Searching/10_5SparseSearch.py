@@ -58,10 +58,9 @@ class tests(unittest.TestCase):
         ('ball',['at','','','','ball','','','car','','','dad','',''],4)
     ]
 
-    def TrueTest(self):
+    def test_True(self):
         for [x,input,expected] in self.data:
             output = SparseSearch(input,x)
-            print(output)
             self.assertEqual(output,expected)
 
 if __name__=='__main__':

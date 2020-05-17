@@ -64,12 +64,12 @@ class tests(unittest.TestCase):
 
     tree3 = Tree()
 
-    def testTrue(self):
+    def test_True(self):
         result, depth = self.tree.CheckBalanceMaintain()
         self.assertTrue(result)
         self.assertEqual(depth, 3)
 
-    def testFalse(self):
+    def test_False(self):
         result, depth = self.tree2.CheckBalanceMaintain()
         self.assertFalse(result)
         self.assertEqual(depth, 3)

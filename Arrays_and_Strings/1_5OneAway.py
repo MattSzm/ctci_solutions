@@ -50,12 +50,12 @@ class test(unittest.TestCase):
         ('pale', 'pblt'),
     ]
 
-    def testTrue(self):
+    def test_True(self):
         for [string1, string2] in self.dataT:
             result = OneAway(string1, string2)
             self.assertTrue(result)
 
-    def testFalse(self):
+    def test_False(self):
         for [string1, string2] in self.dataF:
             result = OneAway(string1, string2)
             self.assertFalse(result)

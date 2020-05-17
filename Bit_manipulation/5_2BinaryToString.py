@@ -1,7 +1,7 @@
 import unittest
 
 def BinaryToSting(doubleV):
-    if doubleV < 0 or doubleV > 0:
+    if doubleV < 0 or doubleV > 1:
         return 'ERROR'
     output = '.'
     value = 0.5
@@ -25,12 +25,12 @@ class Tests(unittest.TestCase):
         0.101, 0.46599446591, 1.312
     ]
 
-    def TestTrue(self):
+    def test_True(self):
         for [doubleV, result] in self.dataT:
             output = BinaryToSting(doubleV)
             self.assertEqual(result,output)
 
-    def TestFalse(self):
+    def test_False(self):
         for doubleV in self.dataF:
             output = BinaryToSting(doubleV)
             self.assertEqual(output,'ERROR')

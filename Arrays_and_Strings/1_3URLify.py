@@ -32,10 +32,10 @@ class Test(unittest.TestCase):
     ]
     def test_utlify_wo_memory(self):
         for [test_string, expected] in self.data_v2:
-            output = URLify_wo_memory(test_string)
+            output = URLify(test_string)
             self.assertEqual(expected, output)
 
-    def test_utlify_wo_memory(self):
+    def test_utlify_wo_memory2(self):
         for [test_string, lenght, expected] in self.data:
             output = URLify_wo_memory(test_string, lenght)
             self.assertEqual(expected, output)

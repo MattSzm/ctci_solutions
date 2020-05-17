@@ -79,7 +79,7 @@ class tests(unittest.TestCase):
     inputStack3.push(7)
     inputStack3.push(2)
 
-    def testTrue(self):
+    def test_True(self):
         output = SortStack(self.inputStack)
         for i in self.expected:
             self.assertEqual(i, output.pop())
@@ -89,7 +89,7 @@ class tests(unittest.TestCase):
             self.assertEqual(i, output.pop())
 
 
-    def testFalse(self):
+    def test_False(self):
         output = SortStack(self.inputStack2)
         self.assertEqual(output,-1)
 

@@ -1,6 +1,6 @@
 import unittest
 def MagicIndexBase(arr):
-    MagicIndex(arr, 0, len(arr)-1)
+    return MagicIndex(arr, 0, len(arr)-1)
 
 def MagicIndex(arr, p, q):
     if q < p:
@@ -14,7 +14,7 @@ def MagicIndex(arr, p, q):
         return MagicIndex(arr, p, m-1)
 
 def MagincIndexBetterBase(arr):
-    MagicIndexBetter(arr, 0, len(arr)-1)
+    return MagicIndexBetter(arr, 0, len(arr)-1)
 
 def MagicIndexBetter(arr, p, q):
     if q < p:
@@ -47,7 +47,7 @@ class tests(unittest.TestCase):
         ([-2,-2,-2,0,7,7,7,9], -1),
     ]
 
-    def TrueTest(self):
+    def test_True(self):
         for [input, expected] in self.dataT:
             output = MagicIndexBase(input)
             self.assertEqual(output,expected)
@@ -55,7 +55,7 @@ class tests(unittest.TestCase):
             output = MagincIndexBetterBase(input)
             self.assertEqual(output, expected)
 
-    def FalseTest(self):
+    def test_False(self):
         for input in self.dataF:
             output = MagicIndexBase(input)
             self.assertFalse(output)

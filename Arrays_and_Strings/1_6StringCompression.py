@@ -27,12 +27,12 @@ def Compression(string):
 
 class tests (unittest.TestCase):
     data =[
-        ('aabcccccaaa','a2blc5a3'),
+        ('aabcccccaaa','a2b1c5a3'),
         ('',-1),
         ('abcdef','abcdef')
     ]
 
-    def trueTest(self):
+    def test_working(self):
         for [input,expected] in self.data:
             output = Compression(input)
             self.assertEqual(output, expected)

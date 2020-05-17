@@ -1,6 +1,6 @@
 def SortedSearchNoSize(input, x):
     size = 1
-    if input[size] != -1 and input[size] < x:
+    while input[size] != -1 and input[size] < x:
         size *= 2
     right = size
     left = int(size/2)
@@ -22,7 +22,7 @@ class tests(unittest.TestCase):
         ([1,3,4,6,8,-1,-1,-1,-1,-1,-1,-1],6,3),
         ([1,1,3,4,6,6,7,8,9,10,13,15 -1, -1, -1, -1, -1, -1, -1], 13, 10),
     ]
-    def sortedtest(self):
+    def test_sorted(self):
         for [input,search,expected] in self.data:
             output = SortedSearchNoSize(input,search)
             self.assertEqual(output,expected)

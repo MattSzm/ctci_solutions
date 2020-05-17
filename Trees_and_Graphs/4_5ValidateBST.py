@@ -60,12 +60,12 @@ class tests(unittest.TestCase):
     f1=Node(8,left=e1, right=h1)
     root1=Node(4,left=d1,right=f1)
 
-    def testFalse(self):
+    def test_False(self):
         output=Validate(self.root)
         self.assertFalse(output)
         self.assertFalse(Validate(None))
 
-    def testTrue(self):
+    def test_True(self):
         output=Validate(self.root1)
         self.assertTrue(output)
 

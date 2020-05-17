@@ -28,12 +28,12 @@ class test(unittest.TestCase):
         'fsew fso'
     ]
 
-    def testTrue(self):
+    def test_True(self):
         for input in self.dataT:
             output = Permutation(input)
             self.assertTrue(output)
 
-    def testFalse(self):
+    def test_False(self):
         for input in self.dataF:
             output = Permutation(input)
             self.assertFalse(output)

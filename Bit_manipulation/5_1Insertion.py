@@ -22,7 +22,7 @@ def InsertionBetter(M, N, i, j):
     highmask = (1<<i)-1
     mask = highmask|downmask
     N = int(N,2)&mask
-    M = M << i
+    M = int(M,2) << i
     return bin(N|M)
 
 class test(unittest.TestCase):
@@ -31,13 +31,13 @@ class test(unittest.TestCase):
     i=2
     j=6
 
-    def insertionTest(self):
-        expected = '10001001100'
+    def test_insertion(self):
+        expected = '0b10001001100'
         result = Insertion(self.M,self.N,self.i,self.j)
         self.assertEqual(expected,result)
 
-    def insertionBetterTest(self):
-        expected = '10001001100'
+    def test_insertionBetter(self):
+        expected = '0b10001001100'
         result = InsertionBetter(self.M,self.N,self.i,self.j)
         self.assertEqual(expected,result)
 

@@ -47,7 +47,7 @@ class Stack_of_plates:
 
 
 class test(unittest.TestCase):
-    def append_and_pop_test(self):
+    def test_append_and_pop(self):
         my_stack = Stack_of_plates(2)
         my_stack.append(2)
         my_stack.append(5)
@@ -60,7 +60,7 @@ class test(unittest.TestCase):
             output.append(my_stack.pop())
         self.assertEqual(expected, output)
 
-    def popAt_test(self):
+    def test_popAt(self):
         my_stack = Stack_of_plates(2)
         my_stack.append(2)
         my_stack.append(5)

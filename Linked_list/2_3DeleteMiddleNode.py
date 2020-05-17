@@ -27,7 +27,7 @@ class tests(unittest.TestCase):
     linkedList = LinkedList()
     linkedList.head = A
 
-    def delete_middle_node_test(self):
+    def test_delete_middle_node_test(self):
          output = delete_middle_node(self.C)
          self.assertTrue(output)
          output = delete_middle_node(self.F)

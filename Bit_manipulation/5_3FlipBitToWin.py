@@ -18,23 +18,19 @@ def flipBIt(number):
             current_value = 0
         max_value = max(max_value, previous_value+current_value+1)
         number >>= 1
+    return max_value
 
 class tests(unittest.TestCase):
     dataT = [
         (1775,8),
         (619,4)
     ]
-    dataF= [127]
 
-    def workingTest(self):
-        for [input, expected] in self.dataF:
+    def test_working(self):
+        for [input, expected] in self.dataT:
             output = flipBIt(input)
             self.assertEqual(output,expected)
 
-    def notWorkingTest(self):
-        for input in self.dataF:
-            output = flipBIt(input)
-            self.assertFalse(output)
 
 if __name__ == '__main__':
     unittest.main()
