@@ -1,18 +1,17 @@
 
 
-def Permutations(string):
-    if not len(string):
-        return False
-    memory = [string[0]]
-    for index in range(1, len(string), 1):
-        new_memory = []
-        for item in memory:
-            for i in range(len(item)+1):
-                x=item[:i]+string[index]+item[i:]
-                new_memory.append(x)
-        memory=new_memory
+def Permutations(string: str)->list:
+    output = []
+    PermutationsRecursive(string, '', output)
+    return output
 
-    return memory
+def PermutationsRecursive(rest, prefix, output):
+    if len(rest) == 0:
+        output.append(prefix)
+        return
+    for i in range(len(rest)):
+        new_rest= rest[:i] + rest[i+1:]
+        PermutationsRecursive(new_rest, prefix+rest[i], output)
 
 
 if __name__ == '__main__':
