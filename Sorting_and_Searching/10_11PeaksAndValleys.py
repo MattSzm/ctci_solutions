@@ -1,4 +1,3 @@
-import unittest
 
 def PaV(array:list)->list:
     sorted_ = sorted(array)

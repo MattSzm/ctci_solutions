@@ -17,7 +17,7 @@ def search(t1, t2)->bool:
     right = search(t1.right, t2)
     return left or right
 
-def checkSubree(t1, t2):
+def checkSubree(t1, t2)->bool:
     if not t1 and not t2:
         return True
     elif not t1 or not t2:
