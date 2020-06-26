@@ -36,14 +36,16 @@ def PatternMatching(input:str, pattern:str)->bool:
                     if not bCurr:
                         bCurr = input[currIndex:currIndex+bLength]
                     else:
+
                         if input[currIndex:currIndex+bLength] != bCurr:
                             break
                     currIndex += bLength
             else:
-                return True
+                if currIndex == length:
+                    return True
     return False
 
 
 if __name__ == '__main__':
-    output = PatternMatching('catcatgocatgo','AABAB')
+    output = PatternMatching('catcatgocatgocat','AABABA')
     print(output)
