@@ -35,6 +35,4 @@ def findPeek(queue):
     return v
 
 if __name__ == '__main__':
-    print(Algo(23))
-    print('\n')
     print(BetterSolution(23))
