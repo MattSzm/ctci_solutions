@@ -1,4 +1,23 @@
 import sys
+def WorseSolution(k):
+    memo = [1]
+    for i in range(0,k):
+        extraMemo = []
+        for m in memo:
+            extraMemo.append(m*3)
+            extraMemo.append(m*5)
+            extraMemo.append(m*7)
+        memo.extend(extraMemo)
+
+        memo.sort()
+        j=0
+        for index in range(0,len(memo)):
+            if memo[index-j] == memo[index-j-1]:
+                memo.pop(index-j)
+                j += 1
+    return memo[k-1]
+
+
 
 def BetterSolution(k):
     if k < 0:
@@ -36,3 +55,4 @@ def findPeek(queue):
 
 if __name__ == '__main__':
     print(BetterSolution(23))
+    print(WorseSolution(23))
