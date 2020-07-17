@@ -35,7 +35,6 @@ def SmallestK(array:list, k:int)->list:
             return output
 
 #if unique
-
 def heapify(heap, index):
     size = len(heap)
     left = index*2+1
@@ -65,7 +64,7 @@ def SmallestKHeap(array:list, k:int)->list:
         i += 1
 
     while i < len(array):
-        if array[i] < heap[0] and array[i] not in heap:
+        if array[i] < heap[0]:
             heap.append(array[i])
             heap[0], heap[k] = heap[k],heap[0]
             heap.pop()
@@ -85,4 +84,5 @@ if __name__ == '__main__':
     print(SmallestKBruteForce(input, 4))
     input = [8, 4, 3, 5, 6, 0, 13, 4, 65, 1, 3, 5, 1, 3]
     print(SmallestK(input,4))
+    input = [8, 4, 3, 5, 6, 0, 13, 65, 1]
     print(SmallestKHeap(input,4))
